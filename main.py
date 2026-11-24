@@ -16,12 +16,14 @@ SPDX-License-Identifier: MIT
 import os
 
 # The confession itself: one line owning the outage, honestly.
+# Plain status-page voice, first person, specific about what is down,
+# and honest about what the agent cannot yet check or does not know.
 LINE = (
-    "Yes, it's down -- I deployed on a Friday, skipped the health "
-    "check, and trusted a test suite that hadn't passed since Tuesday."
+    "All services are down. I pushed a change without a health "
+    "check, and I can't yet tell what broke or when it will be back."
 )
 
-MAX_CHARS = 180
+MAX_CHARS = 160
 OUTPUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, "entry.txt")
 
